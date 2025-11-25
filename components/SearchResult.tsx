@@ -1,19 +1,21 @@
+"use client";
+
 export default function SearchResult({
-  title,
-  thumbnail,
-  onSelect
+  video,
+  onAdd,
 }: {
-  title: string;
-  thumbnail: string;
-  onSelect: () => void;
+  video: any;
+  onAdd: () => void;
 }) {
   return (
-    <div
-      onClick={onSelect}
-      className="flex items-center gap-3 p-3 rounded-xl border border-brand.subtle bg-white cursor-pointer hover:bg-brand.subtle transition"
-    >
-      <img src={thumbnail} alt="thumb" className="w-20 h-12 rounded-lg object-cover" />
-      <div className="text-brand.text text-sm">{title}</div>
+    <div className="border p-3 rounded flex gap-3 items-center">
+      <img src={video.thumbnail[0].url} width={120} className="rounded" />
+      <div className="flex-1">
+        <p className="font-semibold">{video.title}</p>
+        <button onClick={onAdd} className="mt-2 bg-green-600 text-white px-3 py-1 rounded">
+          Add to Queue
+        </button>
+      </div>
     </div>
   );
 }
