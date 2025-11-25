@@ -1,32 +1,23 @@
+"use client";
+
 export default function PlayerControls({
   onPlay,
   onPause,
-  onSkip
+  onSkip,
 }: {
-  onPlay?: () => void;
-  onPause?: () => void;
-  onSkip?: () => void;
+  onPlay: () => void;
+  onPause: () => void;
+  onSkip: () => void;
 }) {
   return (
-    <div className="flex items-center justify-center gap-4 mt-4">
-      <button
-        onClick={onPlay}
-        className="px-4 py-2 bg-brand.accent text-white rounded-lg"
-      >
+    <div className="flex gap-3">
+      <button onClick={onPlay} className="bg-green-600 text-white px-3 py-2 rounded">
         Play
       </button>
-
-      <button
-        onClick={onPause}
-        className="px-4 py-2 bg-brand.subtle text-brand.text rounded-lg"
-      >
+      <button onClick={onPause} className="bg-yellow-500 text-white px-3 py-2 rounded">
         Pause
       </button>
-
-      <button
-        onClick={onSkip}
-        className="px-4 py-2 bg-brand.text text-white rounded-lg"
-      >
+      <button onClick={onSkip} className="bg-red-600 text-white px-3 py-2 rounded">
         Skip
       </button>
     </div>
