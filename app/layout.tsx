@@ -1,9 +1,11 @@
+import "../styles/globals.css";
+
 export const metadata = {
-  title: "Karaoke",
-  description: "Karaoke App"
+  title: "Karaoke App",
+  description: "Use your phone as a karaoke remote!",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>{children}</body>
